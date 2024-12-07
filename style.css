@@ -8,7 +8,7 @@
 body {
     background-color: rgb(202, 207, 210);
     transition: background-color 500ms ease;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -51,6 +51,7 @@ header {
 .intro h3, .locations h3 {
     color: rgb(93, 109, 126);
     font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .intro p, .locations p {
@@ -75,7 +76,6 @@ header {
 
 .addresses p {
     color: rgb(23, 32, 42);
-    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -140,9 +140,27 @@ header {
     justify-content: space-between;
 }
 
+.pink-galah {
+    background-color: rgb(189, 195, 199);
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 190px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    background-color: rgb(236, 240, 241);
+    display: flex;
+}
+
+.profile img {
+    width: 100px;
+}
+
 /* dark mode button */
 #dark-mode-button {
-    font-family: Arial, Helvetica, sans-serif;
     color: rgb(242, 243, 244);
     background-color: rgb(52, 73, 94);
     border-radius: 5px;
