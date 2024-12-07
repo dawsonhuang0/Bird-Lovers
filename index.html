@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bird Lovers</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+           <p id="site-title">Bird Lovers</p>
+           <p id="dark-mode-button">Dark Mode</p>
+        </header>
+        <article class="intro">
+            <h3>Welcome!</h3>
+            <p>
+                I captured some photos of beautiful birds and I want to share them with bird 
+                lovers! That's why I made this lovely website for you all, enjoy!
+            </p>
+        </article>
+        <article class="locations">
+            <h3>Where did I meet them</h3>
+            <p>
+                Literally they are everywhere in Sydney (or the entire Australia), I met them in 
+                the following suburbs:
+            </p>
+            <div class="addresses">
+                <p id="eastlakes">Eastlakes</p>
+                <p id="kensington">Kensington</p>
+                <p id="pennant-hills">Pennant Hills</p>
+            </div>
+            <div class="map-img"></div>
+            <div class="map-footer">
+                <p>Hover an address to see location area</p>
+                <p style="font-family: Arial, Helvetica, sans-serif; text-align: right;">
+                    Map imagery &copy 2024 Google
+                </p>
+            </div>
+        </article>
+        <script>
+            document.getElementById("dark-mode-button").addEventListener("click", function() {
+                document.querySelectorAll(".addresses p").forEach((address) => {
+                    address.classList.add("transition");
+                });
+
+                const body = document.body;
+                if (body.classList.contains("dark")) {
+                    body.classList.remove("dark");
+                    this.textContent = "Dark Mode";
+                } else {
+                    body.classList.add("dark");
+                    this.textContent = "Light Mode";
+                }
+
+                setTimeout(() => {
+                    document.querySelectorAll(".addresses p").forEach((address) => {
+                        address.classList.remove("transition");
+                    });
+                }, 500);
+            });
+
+            document.querySelectorAll('.addresses p').forEach((address) => {
+                address.addEventListener('mouseenter', () => {
+                    const mapImg = document.querySelector('.map-img');
+                    mapImg.classList.add(`map-img-${address.id}`);
+                });
+                address.addEventListener('mouseleave', () => {
+                    const mapImg = document.querySelector('.map-img');
+                    mapImg.className = 'map-img';
+                });
+            });
+        </script>
+    </body>
+</html>
