@@ -9,6 +9,7 @@
            <p id="site-title">Bird Lovers</p>
            <p id="dark-mode-button">Dark Mode</p>
         </header>
+
         <article class="intro">
             <h3>Welcome!</h3>
             <p>
@@ -16,6 +17,7 @@
                 lovers! That's why I made this lovely website for you all, enjoy!
             </p>
         </article>
+
         <article class="locations">
             <h3>Where did I meet them</h3>
             <p>
@@ -31,24 +33,115 @@
             <div class="map-footer">
                 <p>Hover an address to see location area</p>
                 <p style="font-family: Arial, Helvetica, sans-serif; text-align: right;">
-                    Map imagery &copy 2024 Google
+                    Map imagery &copy; 2024 Google
                 </p>
             </div>
         </article>
-        <div class="pink-galah">
+
+        <div class="bird pink-galah">
             <div class="profile">
                 <img src="img/galah-profile.jpeg" />
                 <div class="profile-text">
-                    <p class="bird-name">Pink Galah</p>
+                    <p class="bird-name">Galah</p>
                     <p class="bird-description">
-                        The pink galah, or rose-breasted cockatoo, is an Australian parrot with pink 
+                        The galah, or rose-breasted cockatoo, is an Australian parrot with pink 
                         plumage and grey wings, known for its playful, social nature in noisy flocks.
                     </p>
                 </div>
             </div>
+            <div class="action-bar">
+                <div class="action-text">
+                    <a href="https://en.wikipedia.org/wiki/Galah">
+                        Learn more from Wikipedia <span style="font-size: 20px;">&nearrow;</span>
+                    </a>
+                </div>
+                <div class="action-text">
+                    <a href="download/Galah.zip" download>
+                        Download high quality images(10.3MB) 
+                        <span style="font-size: 18px;">&darr;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="bird-images">
+                <img src="img/galah_0.jpeg" />
+                <img src="img/galah_1.jpeg" />
+                <img src="img/galah_2.jpeg" />
+                <img src="img/galah_3.jpeg" />
+            </div>
         </div>
-        <div class="sulphur-cockatoo"></div>
-        <div class="aus-magpie"></div>
+
+        <div class="bird cockatoo">
+            <div class="profile">
+                <img src="img/cockatoo-profile.jpeg" />
+                <div class="profile-text">
+                    <p class="bird-name">Sulphur-Crested Cockatoo</p>
+                    <p class="bird-description">
+                        The Sulphur-crested cockatoo is a large, white parrot with a striking yellow 
+                        crest, native to Australia. Known for loud calls and playful behavior, it 
+                        often gathers in noisy flocks.
+                    </p>
+                </div>
+            </div>
+            <div class="action-bar">
+                <div class="action-text">
+                    <a href="https://en.wikipedia.org/wiki/Sulphur-crested_cockatoo">
+                        Learn more from Wikipedia <span style="font-size: 20px;">&nearrow;</span>
+                    </a>
+                </div>
+                <div class="action-text">
+                    <a href="download/Sulphur-Crested-Cockatoo.zip" download>
+                        Download high quality images(11.9MB) 
+                        <span style="font-size: 18px;">&darr;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="bird-images">
+                <img src="img/cockatoo_0.jpeg" />
+                <img src="img/cockatoo_1.jpeg" />
+                <img src="img/cockatoo_2.jpeg" />
+            </div>
+        </div>
+
+        <div class="bird aus-magpie">
+            <div class="profile">
+                <img src="img/magpie-profile.jpeg" />
+                <div class="profile-text">
+                    <p class="bird-name">Australian Magpie</p>
+                    <p class="bird-description">
+                        The Australian magpie is a black-and-white bird known for its melodious 
+                        warbling and territorial nature. Common across Australia, it’s admired for 
+                        its intelligence and striking appearance. This gallery is special because 
+                        it is about a magpie family.
+                    </p>
+                </div>
+            </div>
+            <div class="action-bar">
+                <div class="action-text">
+                    <a href="https://en.wikipedia.org/wiki/Australian_magpie">
+                        Learn more from Wikipedia <span style="font-size: 20px;">&nearrow;</span>
+                    </a>
+                </div>
+                <div class="action-text">
+                    <a href="download/Australian-Magpie.zip" download>
+                        Download high quality images(9.3MB) 
+                        <span style="font-size: 18px;">&darr;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="bird-images">
+                <img src="img/magpie_kid_0.jpeg" />
+                <img src="img/magpie_kid_1.jpeg" />
+                <img src="img/magpie_kid_2.jpeg" />
+                <img src="img/magpie_kid_and_mum.jpeg" />
+                <img src="img/magpie_dad.jpeg" />
+            </div>
+        </div>
+
+        <p class="footer">
+            &copy; 2024 Dawson Huang. Project hosted on 
+            <a href="https://github.com/dawsonhuang0/Bird-Lovers">GitHub</a>.
+        </p>
+
         <script>
             document.getElementById("dark-mode-button").addEventListener("click", function() {
                 document.querySelectorAll(".addresses p").forEach((address) => {

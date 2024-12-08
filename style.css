@@ -11,6 +11,8 @@
 
 /* light mode configurations */
 body {
+    width: 70%;
+    margin: 0 auto;
     background-color: rgb(202, 207, 210);
     transition: background-color 500ms ease;
     font-family: 'source-sans-3', Arial, Helvetica, sans-serif;
@@ -21,6 +23,7 @@ header {
     background-color: rgb(242, 243, 244);
     border-bottom: 0.6px solid rgb(144, 148, 151);
     position: fixed;
+    left: 0;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -38,15 +41,11 @@ header {
 }
 
 .intro {
-    width: 70%;
-    margin: 0 auto;
     position: relative;
     top: 100px;
 }
 
 .locations {
-    width: 70%;
-    margin: 0 auto;
     position: relative;
     top: 140px;
     display: flex;
@@ -145,23 +144,121 @@ header {
     justify-content: space-between;
 }
 
-.pink-galah {
-    background-color: rgb(189, 195, 199);
-    width: 70%;
-    margin: 0 auto;
+.bird {
+    background-color: rgb(186, 190, 191);
     position: relative;
-    top: 190px;
     display: flex;
     flex-direction: column;
+    transition: background-color 500ms ease;
+}
+
+.pink-galah {
+    top: 190px;
+}
+
+.cockatoo {
+    top: 240px;
+}
+
+.aus-magpie {
+    top: 290px;
 }
 
 .profile {
+    color: black;
     background-color: rgb(236, 240, 241);
     display: flex;
+    transition: color 500ms ease,
+                background-color 500ms ease;
 }
 
 .profile img {
-    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bird-name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.bird-description {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.action-bar {
+    display: flex;
+}
+
+.action-text {
+    width: 50%;
+    padding: 5px 10px;
+    background-color: rgb(226, 230, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 500ms ease;
+}
+
+a {
+    color: rgb(0, 113, 227);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.bird-images {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.bird-images img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1000px) {
+    .bird-images {
+        grid-template-columns: repeat(2, 2fr);
+    }
+}
+
+.footer {
+    color: black;
+    text-align: center;
+    height: 35px;
+    position: relative;
+    top: 305px;
+    transition: color 500ms ease;
+}
+
+/* mobile version */
+@media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    #site-title {
+        margin-left: 10px;
+    }
 }
 
 /* dark mode button */
@@ -211,4 +308,21 @@ body.dark .addresses p:hover {
 
 body.dark .map-img {
     background-image: url('img/location_dark.jpeg');
+}
+
+body.dark .bird {
+    background-color: rgb(21, 25, 26);
+}
+
+body.dark .bird .profile {
+    color: rgb(236, 240, 241);
+    background-color: rgb(46, 50, 51);
+}
+
+body.dark .action-text {
+    background-color: rgb(36, 40, 41);
+}
+
+body.dark .footer {
+    color: rgb(202, 207, 210);
 }
