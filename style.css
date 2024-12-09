@@ -253,8 +253,11 @@ a:hover{
     }
 
     header {
-        padding: 5px;
         justify-content: space-between;
+    }
+
+    #site-title {
+        font-size: 44px;
     }
 }
 
