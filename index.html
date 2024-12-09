@@ -165,33 +165,41 @@
                 }, 500);
             });
 
-            document.querySelectorAll('.addresses p').forEach((address) => {
-                if (window.innerWidth > 480) {
-                    address.addEventListener('mouseenter', () => {
-                        const mapImg = document.querySelector('.map-img');
-                        mapImg.classList.add(`map-img-${address.id}`);
-                    });
-                    address.addEventListener('mouseleave', () => {
-                        const mapImg = document.querySelector('.map-img');
-                        mapImg.className = 'map-img';
-                    });
-                } else {
-                    address.addEventListener('touchstart', (event) => {
-                        event.preventDefault();
-                        addresses.forEach((addr) => addr.classList.remove('hover'));
-                        address.classList.add('hover');
-                        mapImg.className = 'map-img';
-                        mapImg.classList.add(`map-img-${address.id}`);
-                    });
+            const mapImg = document.querySelector('.map-img');
+            const addresses = document.querySelectorAll('.addresses p');
 
-                    address.addEventListener('touchend', () => {
-                        address.classList.remove('hover');
-                    });
+            const addSpotlight = (address) => {
+                mapImg.className = 'map-img';
+                mapImg.classList.add(`map-img-${address.id}`);
+            };
 
-                    address.addEventListener('touchmove', () => {
-                        address.classList.remove('hover');
-                        mapImg.className = 'map-img';
-                    });
+            const resetSpotlight = () => {
+                mapImg.className = 'map-img';
+            };
+
+            addresses.forEach((address) => {
+                address.addEventListener('mouseenter', () => {
+                    addSpotlight(address);
+                    address.classList.add('hover');
+                });
+
+                address.addEventListener('mouseleave', () => {
+                    resetSpotlight();
+                    address.classList.remove('hover');
+                });
+
+                address.addEventListener('touchstart', (event) => {
+                    event.preventDefault();
+                    addresses.forEach((addr) => addr.classList.remove('hover'));
+                    address.classList.add('hover');
+                    addSpotlight(address);
+                });
+            });
+
+            document.addEventListener('touchstart', (event) => {
+                if (![...addresses].some((address) => address.contains(event.target))) {
+                    addresses.forEach((addr) => addr.classList.remove('hover'));
+                    resetSpotlight();
                 }
             });
         </script>
