@@ -316,6 +316,7 @@ body.dark .footer {
 @media screen and (max-width: 480px) {
     body {
         width: 100%;
+        
     }
 
     header {
@@ -326,8 +327,8 @@ body.dark .footer {
         margin-left: 10px;
     }
 
-    #dark-mode-button {
-        top: 10px;
-        bottom: 10px;
+    .intro {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
