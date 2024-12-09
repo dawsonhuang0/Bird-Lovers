@@ -176,25 +176,21 @@
                         mapImg.className = 'map-img';
                     });
                 } else {
-                    document.querySelectorAll('.addresses p').forEach((address) => {
-                        address.addEventListener('touchstart', (event) => {
-                            event.preventDefault();
-                            const mapImg = document.querySelector('.map-img');
-                            mapImg.classList.add(`map-img-${address.id}`);
-                        });
+                    address.addEventListener('touchstart', (event) => {
+                        event.preventDefault();
+                        addresses.forEach((addr) => addr.classList.remove('hover'));
+                        address.classList.add('hover');
+                        mapImg.className = 'map-img';
+                        mapImg.classList.add(`map-img-${address.id}`);
+                    });
 
-                        address.addEventListener('touchend', () => {
-                            const mapImg = document.querySelector('.map-img');
-                            mapImg.className = 'map-img';
-                        });
+                    address.addEventListener('touchend', () => {
+                        address.classList.remove('hover');
+                    });
 
-                        address.addEventListener('touchmove', () => {
-                            const mapImg = document.querySelector('.map-img');
-                            mapImg.className = 'map-img';
-                        });
-
-                        address.removeEventListener('mouseenter', () => {});
-                        address.removeEventListener('mouseleave', () => {});
+                    address.addEventListener('touchmove', () => {
+                        address.classList.remove('hover');
+                        mapImg.className = 'map-img';
                     });
                 }
             });
