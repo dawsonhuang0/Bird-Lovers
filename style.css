@@ -331,4 +331,10 @@ body.dark .footer {
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    #dark-mode-button {
+        padding: 8px;
+        border-radius: 5px;
+        right: 6px;
+    }
 }
