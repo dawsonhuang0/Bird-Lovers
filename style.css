@@ -257,7 +257,8 @@ a:hover{
     }
 
     #site-title {
-        font-size: 44px;
+        font-size: 46px;
+        margin-left: 10px;
     }
 }
 
