@@ -166,14 +166,37 @@
             });
 
             document.querySelectorAll('.addresses p').forEach((address) => {
-                address.addEventListener('mouseenter', () => {
-                    const mapImg = document.querySelector('.map-img');
-                    mapImg.classList.add(`map-img-${address.id}`);
-                });
-                address.addEventListener('mouseleave', () => {
-                    const mapImg = document.querySelector('.map-img');
-                    mapImg.className = 'map-img';
-                });
+                if (window.innerWidth > 480) {
+                    address.addEventListener('mouseenter', () => {
+                        const mapImg = document.querySelector('.map-img');
+                        mapImg.classList.add(`map-img-${address.id}`);
+                    });
+                    address.addEventListener('mouseleave', () => {
+                        const mapImg = document.querySelector('.map-img');
+                        mapImg.className = 'map-img';
+                    });
+                } else {
+                    document.querySelectorAll('.addresses p').forEach((address) => {
+                        address.addEventListener('touchstart', (event) => {
+                            event.preventDefault();
+                            const mapImg = document.querySelector('.map-img');
+                            mapImg.classList.add(`map-img-${address.id}`);
+                        });
+
+                        address.addEventListener('touchend', () => {
+                            const mapImg = document.querySelector('.map-img');
+                            mapImg.className = 'map-img';
+                        });
+
+                        address.addEventListener('touchmove', () => {
+                            const mapImg = document.querySelector('.map-img');
+                            mapImg.className = 'map-img';
+                        });
+
+                        address.removeEventListener('mouseenter', () => {});
+                        address.removeEventListener('mouseleave', () => {});
+                    });
+                }
             });
         </script>
     </body>
